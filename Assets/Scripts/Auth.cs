@@ -7,12 +7,6 @@ using UnityEngine.EventSystems;
 
 public class Auth : MonoBehaviour
 {
-    // State tracking
-    private bool signIn;
-    private bool signUp;
-    private bool forgotPassword;
-    private bool otpBool;
-
     // Canvas references
     [Header("Canvas References")]
     [SerializeField] private Canvas signInCanvas;
@@ -36,12 +30,6 @@ public class Auth : MonoBehaviour
 
     void Start()
     {
-        // Initialize state
-        signIn = true;
-        signUp = false;
-        forgotPassword = false;
-        otpBool = false;
-
         // Setup button listeners
         SetupButtonListeners();
         
@@ -126,8 +114,6 @@ public class Auth : MonoBehaviour
             return;
         }
         
-        signIn = false;
-        signUp = true;
         signInCanvas.gameObject.SetActive(false);
         signUpCanvas.gameObject.SetActive(true);
         Debug.Log("Navigated to Sign Up screen");
@@ -139,9 +125,7 @@ public class Auth : MonoBehaviour
             Debug.LogError("Canvas references missing in Auth component");
             return;
         }
-        
-        signIn = false;
-        forgotPassword = true;
+       
         signInCanvas.gameObject.SetActive(false);
         forgotPassCanvas.gameObject.SetActive(true);
         Debug.Log("Navigated to Forgot Password screen");
@@ -154,8 +138,7 @@ public class Auth : MonoBehaviour
             return;
         }
         
-        forgotPassword = false;
-        signIn = true;
+        
         forgotPassCanvas.gameObject.SetActive(false);
         signInCanvas.gameObject.SetActive(true);
         Debug.Log("Navigated back to Sign In screen from Forgot Password");
@@ -168,8 +151,6 @@ public class Auth : MonoBehaviour
             return;
         }
         
-        signUp = false;
-        signIn = true;
         signUpCanvas.gameObject.SetActive(false);
         signInCanvas.gameObject.SetActive(true);
         Debug.Log("Navigated back to Sign In screen from Sign Up");
@@ -192,8 +173,6 @@ public class Auth : MonoBehaviour
             return;
         }
         
-        forgotPassword = false;
-        otpBool = true;
         forgotPassCanvas.gameObject.SetActive(false);
         otpCanvas.gameObject.SetActive(true);
         Debug.Log("OTP sent and navigated to OTP screen");
@@ -206,8 +185,6 @@ public class Auth : MonoBehaviour
             return;
         }
         
-        otpBool = false;
-        signIn = true;
         otpCanvas.gameObject.SetActive(false);
         signInCanvas.gameObject.SetActive(true);
         Debug.Log("OTP confirmed and navigated to Sign In screen");

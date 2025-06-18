@@ -47,8 +47,8 @@
   <ItemGroup>
     <Compile Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Editor/Gluon/UpdateProgress.cs" />
     <Compile Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Editor/Views/Branch/BranchesViewMenu.cs" />
-    <Compile Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Editor/Views/Merge/Developer/DirectoryConflicts/AddMoveMenu.cs" />
     <Compile Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Editor/UI/Tree/PlasticTreeView.cs" />
+    <Compile Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Editor/Views/Merge/Developer/DirectoryConflicts/AddMoveMenu.cs" />
     <Compile Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Editor/WebApi/ErrorResponse.cs" />
     <Compile Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Editor/WebApi/SubscriptionDetailsResponse.cs" />
     <Compile Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Editor/UI/DropDownTextField.cs" />
@@ -220,8 +220,8 @@
     <Compile Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Editor/Configuration/ChannelCertificateUiImpl.cs" />
     <Compile Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Editor/UI/Images.cs" />
     <Compile Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Editor/Views/PendingChanges/DrawOperationSuccess.cs" />
-    <Compile Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Editor/UI/TabButton.cs" />
     <Compile Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Editor/UI/StatusBar/GUIContentNotification.cs" />
+    <Compile Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Editor/UI/TabButton.cs" />
     <Compile Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Editor/Gluon/ProgressOperationHandler.cs" />
     <Compile Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Editor/OrganizationsInformation.cs" />
     <Compile Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Editor/AssetMenu/AssetCopyPathOperation.cs" />
