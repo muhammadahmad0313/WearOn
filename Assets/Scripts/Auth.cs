@@ -2,196 +2,194 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI; 
-using TMPro; 
+using TMPro;
 using UnityEngine.EventSystems;
 
 public class Auth : MonoBehaviour
 {
-    // Canvas references
-    [Header("Canvas References")]
-    [SerializeField] private Canvas signInCanvas;
-    [SerializeField] private Canvas signUpCanvas;
-    [SerializeField] private Canvas forgotPassCanvas;
-    [SerializeField] private Canvas otpCanvas;
-    
-    // Text references
-    [Header("Text References")]
-    [SerializeField] private TMP_Text signUpText;
-    [SerializeField] private TMP_Text forgotPass;
-    [SerializeField] private TMP_Text backToSignInFromForgot;
-    [SerializeField] private TMP_Text backToSignInFromSignUp;
-    [SerializeField] private TMP_Text OtpToSignIn;
+    // Panel references
+    [Header("Panels References")]
+    [SerializeField] private GameObject signInPanel;
+    [SerializeField] private GameObject signUpPanel;
+    [SerializeField] private GameObject homePanel;
+    [SerializeField] private GameObject feedPanel;
+    [SerializeField] private GameObject cartPanel;
+    [SerializeField] private GameObject profilePanel;
+    [SerializeField] private GameObject footerPanel;
 
     // Button references
     [Header("Button References")]
     [SerializeField] private Button SignUpBtn;
-    [SerializeField] private Button SendOtp;
-    [SerializeField] private Button ConfirmOtp;
+    [SerializeField] private Button LoginBtn;
+    [SerializeField] private Button HomeBtn;
+    [SerializeField] private Button FeedBtn;
+    [SerializeField] private Button CartBtn;
+    [SerializeField] private Button ProfileBtn;
+    [SerializeField] private Button LogoutBtn;
+    [SerializeField] private Button SignUpTextBtn;
+    [SerializeField] private Button LoginTextBtn;
+
+    
+    private Transform ActiveHomeBtn;
+    private Transform ActiveFeedBtn;
+    private Transform ActiveCartBtn;
+    private Transform ActiveProfileBtn;
 
     void Start()
     {
-        // Setup button listeners
         SetupButtonListeners();
-        
-        // Setup text element triggers
-        SetupTextTriggers();
+        SetUpActiveBtns();
     }
-    
+
     private void SetupButtonListeners()
     {
-        // Add click events to all buttons
         if (SignUpBtn != null)
         {
-            SignUpBtn.onClick.AddListener(CompleteSignUp);
+            SignUpBtn.onClick.AddListener(Switch_SignUp);
         }
 
-        if (SendOtp != null)
+        if (LoginBtn != null)
         {
-            SendOtp.onClick.AddListener(SendOtpProcess);
+            LoginBtn.onClick.AddListener(Switch_Login);
         }
 
-        if (ConfirmOtp != null)
+        if (HomeBtn != null)
         {
-            ConfirmOtp.onClick.AddListener(ConfirmOtpProcess);
+            HomeBtn.onClick.AddListener(MoveOn__Home);
         }
+
+        if (FeedBtn != null)
+        {
+            FeedBtn.onClick.AddListener(MoveOn__Feed);
+        }
+
+        if (CartBtn != null)
+        {
+            CartBtn.onClick.AddListener(MoveOn__Cart);
+        }
+
+        if (ProfileBtn != null)
+        {
+            ProfileBtn.onClick.AddListener(MoveOn_Profile);
+        }
+
+        if (LogoutBtn != null)
+        {
+            LogoutBtn.onClick.AddListener(Switch_Logout);
+        }
+
+        if (SignUpTextBtn != null)
+        {
+            SignUpTextBtn.onClick.AddListener(Switch_SignUpPanel);
+        }
+
+        if (LoginTextBtn != null)
+        {
+            LoginTextBtn.onClick.AddListener(Switch_SignUp);
+        }
+    }
+
+    private void SetUpActiveBtns()
+    {
+        if (HomeBtn != null && HomeBtn.transform.childCount > 0)
+            ActiveHomeBtn = HomeBtn.transform.GetChild(0);
+
+        if (FeedBtn != null && FeedBtn.transform.childCount > 0)
+            ActiveFeedBtn = FeedBtn.transform.GetChild(0);
+
+        if (CartBtn != null && CartBtn.transform.childCount > 0)
+            ActiveCartBtn = CartBtn.transform.GetChild(0);
+        
+         if (ProfileBtn != null && ProfileBtn.transform.childCount > 0)
+            ActiveProfileBtn = ProfileBtn.transform.GetChild(0);
+        
+    
     }
     
-    private void SetupTextTriggers()
+    private void Switch_SignUp()
     {
-        // Get or create EventTriggers for all clickable text elements
-        EventTrigger SignIN_SignUp_Trigger = signUpText?.gameObject.GetComponent<EventTrigger>();
-        EventTrigger SignIN_ForgotPass_Trigger = forgotPass?.gameObject.GetComponent<EventTrigger>();
-        EventTrigger ForgotPass_SignIn_Trigger = backToSignInFromForgot?.gameObject.GetComponent<EventTrigger>();
-        EventTrigger SignUp_SignIn_Trigger = backToSignInFromSignUp?.gameObject.GetComponent<EventTrigger>();
-        EventTrigger SendOtp_SignIn_Trigger = OtpToSignIn?.gameObject.GetComponent<EventTrigger>();
-
-
-        // OTP TO SIGN IN
-        AddClickTrigger(OtpToSignIn, SendOtp_SignIn_Trigger, Switch_SendOtp_To_SignIn);
-
-        // SIGN IN TO SIGN UP
-        AddClickTrigger(signUpText, SignIN_SignUp_Trigger, Switch_SignIn_To_SignUp);
-
-        // SIGN IN TO FORGOT PASSWORD
-        AddClickTrigger(forgotPass, SignIN_ForgotPass_Trigger, Switch_SignIn_To_ForgotPass);
-
-        // FORGOT PASSWORD TO SIGN IN
-        AddClickTrigger(backToSignInFromForgot, ForgotPass_SignIn_Trigger, Switch_ForgotPass_To_SignIn);
-
-        // SIGN UP TO SIGN IN
-        AddClickTrigger(backToSignInFromSignUp, SignUp_SignIn_Trigger, Switch_SignUp_To_SignIn);
+        SwitchToPanel(signInPanel);
     }
     
-    // Helper method to add click triggers to TMP_Text elements
-    private void AddClickTrigger(TMP_Text textElement, EventTrigger trigger, UnityEngine.Events.UnityAction action)
+    private void Switch_Login()
     {
-        if (textElement == null) return;
-        
-        // Get or add EventTrigger component
-        if (trigger == null)
+        SwitchToPanel(homePanel);
+    }
+    
+    private void MoveOn__Home()
+    {
+        ActiveHomeBtn.gameObject.SetActive(true);
+        ActiveFeedBtn.gameObject.SetActive(false);
+        ActiveCartBtn.gameObject.SetActive(false);
+        ActiveProfileBtn.gameObject.SetActive(false);
+
+        SwitchToPanel(homePanel);
+    }
+    
+    private void MoveOn__Feed()
+    {
+        ActiveHomeBtn.gameObject.SetActive(false);
+        ActiveFeedBtn.gameObject.SetActive(true);
+        ActiveCartBtn.gameObject.SetActive(false);
+        ActiveProfileBtn.gameObject.SetActive(false);
+        SwitchToPanel(feedPanel);
+    }
+    
+    private void MoveOn__Cart()
+    {
+        ActiveHomeBtn.gameObject.SetActive(false);
+        ActiveFeedBtn.gameObject.SetActive(false);
+        ActiveCartBtn.gameObject.SetActive(true);
+        ActiveProfileBtn.gameObject.SetActive(false);
+        SwitchToPanel(cartPanel);
+    }
+    
+    private void MoveOn_Profile()
+    {
+        ActiveHomeBtn.gameObject.SetActive(false);
+        ActiveFeedBtn.gameObject.SetActive(false);
+        ActiveCartBtn.gameObject.SetActive(false);
+        ActiveProfileBtn.gameObject.SetActive(true);
+        SwitchToPanel(profilePanel);
+    }
+    
+    private void Switch_Logout()
+    {
+        HomeBtn.gameObject.SetActive(true);
+        ActiveHomeBtn.gameObject.SetActive(true);
+        ActiveFeedBtn.gameObject.SetActive(false);
+        ActiveCartBtn.gameObject.SetActive(false);
+        ActiveProfileBtn.gameObject.SetActive(false);
+        SwitchToPanel(signInPanel);
+    }
+
+    private void Switch_SignUpPanel()
+    {
+        SwitchToPanel(signUpPanel);
+    }
+    private void SwitchToPanel(GameObject panelToActivate)
+    {
+        // Deactivate all panels
+        if (signInPanel != null) signInPanel.SetActive(false);
+        if (signUpPanel != null) signUpPanel.SetActive(false);
+        if (homePanel != null) homePanel.SetActive(false);
+        if (feedPanel != null) feedPanel.SetActive(false);
+        if (cartPanel != null) cartPanel.SetActive(false);
+        if (profilePanel != null) profilePanel.SetActive(false);
+
+        // Activate the requested panel
+        if (panelToActivate != null)
         {
-            trigger = textElement.gameObject.GetComponent<EventTrigger>();
-            if (trigger == null)
-            {
-                trigger = textElement.gameObject.AddComponent<EventTrigger>();
-            }
+            panelToActivate.SetActive(true);
         }
         
-        // Create a pointer click entry
-        EventTrigger.Entry entry = new EventTrigger.Entry();
-        entry.eventID = EventTriggerType.PointerClick;
-        entry.callback.AddListener((eventData) => { action(); });
-        
-        // Add the entry to the trigger
-        trigger.triggers.Add(entry);
-    }
-
-    // Navigation methods
-    private void Switch_SignIn_To_SignUp()
-    {
-        if (signInCanvas == null || signUpCanvas == null) {
-            Debug.LogError("Canvas references missing in Auth component");
-            return;
+        //footer visibility
+        if (footerPanel != null)
+        {
+            bool showFooter = (panelToActivate == homePanel || panelToActivate == feedPanel || 
+                              panelToActivate == cartPanel || panelToActivate == profilePanel);
+            footerPanel.SetActive(showFooter);
         }
-        
-        signInCanvas.gameObject.SetActive(false);
-        signUpCanvas.gameObject.SetActive(true);
-        Debug.Log("Navigated to Sign Up screen");
     }
-
-    private void Switch_SignIn_To_ForgotPass()
-    {
-        if (signInCanvas == null || forgotPassCanvas == null) {
-            Debug.LogError("Canvas references missing in Auth component");
-            return;
-        }
-       
-        signInCanvas.gameObject.SetActive(false);
-        forgotPassCanvas.gameObject.SetActive(true);
-        Debug.Log("Navigated to Forgot Password screen");
-    }
-
-    private void Switch_ForgotPass_To_SignIn()
-    {
-        if (forgotPassCanvas == null || signInCanvas == null) {
-            Debug.LogError("Canvas references missing in Auth component");
-            return;
-        }
-        
-        
-        forgotPassCanvas.gameObject.SetActive(false);
-        signInCanvas.gameObject.SetActive(true);
-        Debug.Log("Navigated back to Sign In screen from Forgot Password");
-    }
-
-    private void Switch_SignUp_To_SignIn()
-    {
-        if (signUpCanvas == null || signInCanvas == null) {
-            Debug.LogError("Canvas references missing in Auth component");
-            return;
-        }
-        
-        signUpCanvas.gameObject.SetActive(false);
-        signInCanvas.gameObject.SetActive(true);
-        Debug.Log("Navigated back to Sign In screen from Sign Up");
-    }
-
-    // Button action methods
-    private void CompleteSignUp()
-    {
-        // TODO: Implement actual sign up logic
-        Debug.Log("Sign up successful!");
-
-        // Navigate back to sign in
-        Switch_SignUp_To_SignIn();
-    }
-
-    private void SendOtpProcess()
-    {
-        if (forgotPassCanvas == null || otpCanvas == null) {
-            Debug.LogError("Canvas references missing in Auth component");
-            return;
-        }
-        
-        forgotPassCanvas.gameObject.SetActive(false);
-        otpCanvas.gameObject.SetActive(true);
-        Debug.Log("OTP sent and navigated to OTP screen");
-    }
-
-    private void ConfirmOtpProcess()
-    {
-        if (otpCanvas == null || signInCanvas == null) {
-            Debug.LogError("Canvas references missing in Auth component");
-            return;
-        }
-        
-        otpCanvas.gameObject.SetActive(false);
-        signInCanvas.gameObject.SetActive(true);
-        Debug.Log("OTP confirmed and navigated to Sign In screen");
-    }
-
-    private void Switch_SendOtp_To_SignIn()
-    {
-        ConfirmOtpProcess();
-    }
+     
 }
