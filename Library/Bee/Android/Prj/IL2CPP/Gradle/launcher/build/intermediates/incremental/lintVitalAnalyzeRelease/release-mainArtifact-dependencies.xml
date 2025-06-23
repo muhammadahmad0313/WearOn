@@ -1,0 +1,32 @@
+<dependencies>
+  <compile
+      roots="/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle@@:unityLibrary::release">
+    <dependency
+        name="/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle@@:unityLibrary::release"
+        simpleName="Gradle:unityLibrary"/>
+  </compile>
+  <package
+      roots="/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle@@:unityLibrary::release,__local_aars__:/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/libs/unity-classes.jar:unspecified@jar,:arcore_client:@aar,:ARPresto:@aar,:UnityARCore:@aar,:unityandroidpermissions:@aar,/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle@@:unityLibrary:xrmanifest.androidlib::release">
+    <dependency
+        name="/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle@@:unityLibrary::release"
+        simpleName="Gradle:unityLibrary"/>
+    <dependency
+        name="__local_aars__:/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/libs/unity-classes.jar:unspecified@jar"
+        simpleName="__local_aars__:/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/libs/unity-classes.jar"/>
+    <dependency
+        name=":arcore_client:@aar"
+        simpleName=":arcore_client"/>
+    <dependency
+        name=":ARPresto:@aar"
+        simpleName=":ARPresto"/>
+    <dependency
+        name=":UnityARCore:@aar"
+        simpleName=":UnityARCore"/>
+    <dependency
+        name=":unityandroidpermissions:@aar"
+        simpleName=":unityandroidpermissions"/>
+    <dependency
+        name="/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle@@:unityLibrary:xrmanifest.androidlib::release"
+        simpleName="Gradle.unityLibrary:xrmanifest.androidlib"/>
+  </package>
+</dependencies>

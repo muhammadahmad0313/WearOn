@@ -44,6 +44,7 @@
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/differences.ja.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/cm-help.ko.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/semantic.es.txt" />
+    <None Include="Library/PackageCache/com.unity.cloud.gltfast@6.13.0/Editor/UI/ReportItem-style.uss" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/basecommands.en.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/binmergetool.zh-Hant.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/commontypes.ko.txt" />
@@ -62,6 +63,7 @@
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/i3.es.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/guihelp.zh-Hant.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/basecommands.ja.txt" />
+    <None Include="Library/PackageCache/com.unity.cloud.gltfast@6.13.0/Editor/UI/ReportItem.uxml" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/plastic-gui.es.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/cm.ko.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/cm-help.es.txt" />
@@ -83,6 +85,7 @@
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/plastic-gui.ja.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/configurehelper.ja.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/binmergetool.en.txt" />
+    <None Include="Library/PackageCache/com.unity.cloud.gltfast@6.13.0/Editor/UI/MaterialsVariantsComponentInspector.uxml" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/binmergetool.ko.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/plastic-gui.en.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/workspaceserver.zh-Hant.txt" />
@@ -93,6 +96,7 @@
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/clientcommon.en.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/commontypes.en.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/semantic.ja.txt" />
+    <None Include="Library/PackageCache/com.unity.cloud.gltfast@6.13.0/Editor/UI/GltfImporter.uxml" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/basecommands.ko.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/differences.zh-Hans.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/cm-help.ja.txt" />
@@ -111,6 +115,7 @@
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/xdiff.es.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/differences.es.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/images.zh-Hans.txt" />
+    <None Include="Library/PackageCache/com.unity.cloud.gltfast@6.13.0/Editor/UI/Dependency-style.uss" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/mergetool.zh-Hans.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/differences.zh-Hant.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/configurehelper.en.txt" />
@@ -121,6 +126,7 @@
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/images.en.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/semantic.en.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/plastic-gui.zh-Hant.txt" />
+    <None Include="Library/PackageCache/com.unity.cloud.gltfast@6.13.0/Editor/UI/Dependency.uxml" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/xdiff.ja.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/cm.zh-Hant.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/common.en.txt" />
@@ -135,6 +141,7 @@
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/cm-help.en.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/workspaceserver.en.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/cm-help.zh-Hans.txt" />
+    <None Include="Library/PackageCache/com.unity.cloud.gltfast@6.13.0/Editor/UI/GltfImporter-style.uss" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/plastic-gui.zh-Hans.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/commontypes.ja.txt" />
     <None Include="Library/PackageCache/com.unity.collab-proxy@2.8.2/Lib/Editor/Localization/xdiff.zh-Hant.txt" />
