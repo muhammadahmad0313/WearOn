@@ -22,11 +22,21 @@ public class ARItems : MonoBehaviour
     public float scaleMaximum = 3.0f;
     public float scaleSensitivity = 0.01f;
     public float moveSensitivity = 0.01f;
+    public float longPressTime = 1.0f;  // Time in seconds required for a long press
+    public float doubleTapTimeThreshold = 0.5f; 
+    public float doubleTapDistanceThreshold = 50f;  
     
     // Reference to the currently selected/placed object
     private GameObject currentObject;
     private bool isMoving = false;
     private Vector3 touchOffset;
+    
+    // Variables for gesture detection
+    private float touchStartTime;
+    private bool isLongPress = false;
+    private float lastTapTime = 0;
+    private Vector2 lastTapPosition;
+    private int tapCount = 0;
 
     // Setter method for a specific Item GameObject in the array
     public void SetItem(GameObject newItem, int index)
@@ -82,10 +92,40 @@ public class ARItems : MonoBehaviour
         {
             Touch touch = Input.GetTouch(0);
             
-            // Initial touch - place object or select existing one
+            // Initial touch - start tracking touch time for long press detection
             if (touch.phase == TouchPhase.Began)
             {
-                HandleTouchBegan(touch);
+                touchStartTime = Time.time;
+                isLongPress = false;
+                
+                // Handle double-tap detection
+                if (Time.time - lastTapTime < doubleTapTimeThreshold && 
+                    Vector2.Distance(touch.position, lastTapPosition) < doubleTapDistanceThreshold)
+                {
+                    tapCount++;
+                    if (tapCount == 2)
+                    {
+                        // Double tap detected - place object
+                        HandleObjectPlacement(touch);
+                        tapCount = 0;
+                    }
+                }
+                else
+                {
+                    tapCount = 1;
+                }
+                
+                lastTapTime = Time.time;
+                lastTapPosition = touch.position;
+            }
+            // Check for long press and handle object movement
+            else if (touch.phase == TouchPhase.Stationary)
+            {
+                if (!isLongPress && Time.time - touchStartTime > longPressTime)
+                {
+                    isLongPress = true;
+                    HandleLongPress(touch);
+                }
             }
             // Move the object if we're in moving mode
             else if (touch.phase == TouchPhase.Moved && isMoving && currentObject != null)
@@ -93,9 +133,15 @@ public class ARItems : MonoBehaviour
                 HandleObjectMovement(touch);
             }
             // End movement mode when touch ends
-            else if ((touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled) && isMoving)
+            else if ((touch.phase == TouchPhase.Ended || touch.phase == TouchPhase.Canceled))
             {
-                isMoving = false;
+                if (isMoving)
+                {
+                    isMoving = false;
+                }
+                
+                // Reset long press
+                isLongPress = false;
             }
         }
     }
@@ -116,21 +162,29 @@ public class ARItems : MonoBehaviour
             
             // Select this object for manipulation
             currentObject = hitObject;
-            isMoving = true;
+            
+            // Note: We no longer set isMoving to true here
+            // Instead, I'll wait for a long press to initiate movement
             
             // Calculate the offset from the touch to the object
             Vector3 screenPoint = Camera.main.WorldToScreenPoint(currentObject.transform.position);
             touchOffset = currentObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, screenPoint.z));
             
             Debug.Log("Selected existing object: " + hitObject.name);
-            return;
         }
+        // We don't place objects on single tap anymore, that's handled by HandleObjectPlacement
+    }
+    
+    // New method to handle object placement on double tap
+    private void HandleObjectPlacement(Touch touch)
+    {
+        Debug.Log("Double tap detected at: " + touch.position);
         
-        // If we didn't hit an object, try to place a new one on a plane
+        // Try to place a new object on a plane
         bool collision = raycastManager.Raycast(touch.position, raycastHits, TrackableType.PlaneWithinPolygon);
         
         // Debug raycast result
-        Debug.Log("Raycast collision: " + collision + ", Hits: " + raycastHits.Count);
+        Debug.Log("Raycast collision for placement: " + collision + ", Hits: " + raycastHits.Count);
         
         // Get selected index from Auth class
         int selectedIndex = Auth.selected;
@@ -154,7 +208,7 @@ public class ARItems : MonoBehaviour
             // Make this the current object
             currentObject = _object;
             
-            Debug.Log("Item instantiated: " + Items[selectedIndex].name + " (index: " + selectedIndex + ")");
+            Debug.Log("Item instantiated on double tap: " + Items[selectedIndex].name + " (index: " + selectedIndex + ")");
             
             // Disable all detected planes after successful placement
             foreach (var plane in planeManager.trackables)
@@ -182,7 +236,53 @@ public class ARItems : MonoBehaviour
         }
     }
     
-    // Handle pinch gesture for scaling objects
+    // Handle long press for object movement
+    private void HandleLongPress(Touch touch)
+    {
+        Debug.Log("Long press detected at: " + touch.position + " - Current object: " + (currentObject != null ? currentObject.name : "none"));
+        
+        // Only proceed if we have a selected object
+        if (currentObject != null)
+        {
+            // Enable movement mode
+            isMoving = true;
+            Debug.Log("Starting to move object: " + currentObject.name);
+            
+            // Try to find target location from raycast
+            bool collision = raycastManager.Raycast(touch.position, raycastHits, TrackableType.PlaneWithinPolygon);
+            
+            if (collision)
+            {
+                // Update the touch offset
+                Vector3 screenPoint = Camera.main.WorldToScreenPoint(currentObject.transform.position);
+                touchOffset = currentObject.transform.position - raycastHits[0].pose.position;
+            }
+        }
+        else
+        {
+            // Try to select an object first
+            Ray ray = Camera.main.ScreenPointToRay(touch.position);
+            RaycastHit hit;
+            
+            if (Physics.Raycast(ray, out hit))
+            {
+                // If the hit object is one of our placed items
+                GameObject hitObject = hit.transform.gameObject;
+                
+                // Select this object for manipulation
+                currentObject = hitObject;
+                isMoving = true;
+                
+                // Calculate the offset from the touch to the object
+                Vector3 screenPoint = Camera.main.WorldToScreenPoint(currentObject.transform.position);
+                touchOffset = currentObject.transform.position - Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, screenPoint.z));
+                
+                Debug.Log("Selected and moving object after long press: " + hitObject.name);
+            }
+        }
+    }
+    
+    // Handle pinch gesture for scaling objects and rotation with two fingers
     private void HandlePinchToScale()
     {
         // Only scale if we have an object selected
@@ -219,6 +319,22 @@ public class ARItems : MonoBehaviour
         {
             Debug.Log("Scaling object: " + currentObject.name + " to scale: " + newScale);
         }
+        
+        // Handle rotation based on the change in angle between the two fingers
+        Vector2 prevVector = touch1PrevPos - touch0PrevPos;
+        Vector2 currentVector = touch1.position - touch0.position;
+        
+        // Calculate the angle between the previous and current vectors
+        float prevAngle = Mathf.Atan2(prevVector.y, prevVector.x) * Mathf.Rad2Deg;
+        float currentAngle = Mathf.Atan2(currentVector.y, currentVector.x) * Mathf.Rad2Deg;
+        float rotationAngle = currentAngle - prevAngle;
+        
+        // Apply rotation around the Y-axis (up vector in world space)
+        if (Mathf.Abs(rotationAngle) > 0.1f) // Small threshold to prevent tiny rotations
+        {
+            currentObject.transform.Rotate(Vector3.up, rotationAngle, Space.World);
+            Debug.Log("Rotating object: " + currentObject.name + " by angle: " + rotationAngle);
+        }
     }
     
     // Handle moving objects with touch
@@ -226,16 +342,37 @@ public class ARItems : MonoBehaviour
     {
         if (currentObject == null) 
             return;
-            
-        // Convert the touch position to world position at the same depth as the object
-        Vector3 screenPoint = new Vector3(touch.position.x, touch.position.y, Camera.main.WorldToScreenPoint(currentObject.transform.position).z);
-        Vector3 newPosition = Camera.main.ScreenToWorldPoint(screenPoint) + touchOffset;
         
-        // Smoothly move the object to the touch position
-        currentObject.transform.position = Vector3.Lerp(
-            currentObject.transform.position, 
-            newPosition, 
-            Time.deltaTime * 20f  // Adjust this value for smoother/faster movement
-        );
+        // Try to find a valid plane position
+        bool collision = raycastManager.Raycast(touch.position, raycastHits, TrackableType.PlaneWithinPolygon);
+        
+        // If we have a collision with a plane, position the object on the plane
+        if (collision)
+        {
+            // Get position from the raycast hit
+            Vector3 newPosition = raycastHits[0].pose.position + touchOffset;
+            
+            // Smoothly move the object to the touch position
+            currentObject.transform.position = Vector3.Lerp(
+                currentObject.transform.position, 
+                newPosition, 
+                Time.deltaTime * 20f  // Adjust this value for smoother/faster movement
+            );
+        }
+        else
+        {
+            // Fallback to screen-based movement if no plane is hit
+            Vector3 screenPoint = new Vector3(touch.position.x, touch.position.y, Camera.main.WorldToScreenPoint(currentObject.transform.position).z);
+            Vector3 newPosition = Camera.main.ScreenToWorldPoint(screenPoint) + touchOffset;
+            
+            // Smoothly move the object to the touch position
+            currentObject.transform.position = Vector3.Lerp(
+                currentObject.transform.position, 
+                newPosition, 
+                Time.deltaTime * 20f  // Adjust this value for smoother/faster movement
+            );
+        }
+        
+        Debug.Log("Moving object to new position: " + currentObject.transform.position);
     }
 }

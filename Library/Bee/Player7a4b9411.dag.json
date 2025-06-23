@@ -1057,7 +1057,8 @@
         1049,
         1050,
         1051,
-        1052
+        1052,
+        1053
       ],
       "OverwriteOutputs": false,
       "DebugActionIndex": 0
@@ -23933,6 +23934,21 @@
       "DebugActionIndex": 1011
     },
     {
+      "Annotation": "CopyFiles /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/icallsummary.txt",
+      "DisplayName": "Copying icallsummary.txt",
+      "ActionType": "CopyFiles",
+      "Inputs": [
+        "Library/Bee/artifacts/Android/ManagedStripped/icallsummary.txt"
+      ],
+      "Outputs": [
+        "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/icallsummary.txt"
+      ],
+      "ToBuildDependencies": [
+        13
+      ],
+      "DebugActionIndex": 1012
+    },
+    {
       "Annotation": "CopyFiles /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Il2CppBackup/Managed/mscorlib.dll",
       "DisplayName": "Copying mscorlib.dll",
       "ActionType": "CopyFiles",
@@ -23945,7 +23961,7 @@
       "ToBuildDependencies": [
         13
       ],
-      "DebugActionIndex": 1012
+      "DebugActionIndex": 1013
     },
     {
       "Annotation": "CopyFiles /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/unity default resources",
@@ -23957,7 +23973,7 @@
       "Outputs": [
         "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/unity default resources"
       ],
-      "DebugActionIndex": 1013
+      "DebugActionIndex": 1014
     },
     {
       "Annotation": "WriteText Library/Bee/artifacts/csharpactions/build.gradle_5j6j.info",
@@ -23970,7 +23986,7 @@
       "Outputs": [
         "Library/Bee/artifacts/csharpactions/build.gradle_5j6j.info"
       ],
-      "DebugActionIndex": 1014
+      "DebugActionIndex": 1015
     },
     {
       "Annotation": "ActionGenerateProjectFiles /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/build.gradle (+8 others)",
@@ -24012,12 +24028,12 @@
         "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/gradle/wrapper/gradle-wrapper.properties"
       ],
       "ToBuildDependencies": [
-        1014
+        1015
       ],
       "OverwriteOutputs": false,
       "AllowUnexpectedOutput": true,
       "Env": [],
-      "DebugActionIndex": 1015
+      "DebugActionIndex": 1016
     },
     {
       "Annotation": "CopyFiles /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/java/com/unity3d/player/UnityPlayerActivity.java",
@@ -24029,7 +24045,7 @@
       "Outputs": [
         "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/java/com/unity3d/player/UnityPlayerActivity.java"
       ],
-      "DebugActionIndex": 1016
+      "DebugActionIndex": 1017
     },
     {
       "Annotation": "CopyFiles /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/libs/unity-classes.jar",
@@ -24041,7 +24057,7 @@
       "Outputs": [
         "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/libs/unity-classes.jar"
       ],
-      "DebugActionIndex": 1017
+      "DebugActionIndex": 1018
     },
     {
       "Annotation": "CopyFiles /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values/ids.xml",
@@ -24053,7 +24069,7 @@
       "Outputs": [
         "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values/ids.xml"
       ],
-      "DebugActionIndex": 1018
+      "DebugActionIndex": 1019
     },
     {
       "Annotation": "CopyFiles /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values-v21/styles.xml",
@@ -24065,7 +24081,7 @@
       "Outputs": [
         "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values-v21/styles.xml"
       ],
-      "DebugActionIndex": 1019
+      "DebugActionIndex": 1020
     },
     {
       "Annotation": "CopyFiles /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values-v28/styles.xml",
@@ -24077,7 +24093,7 @@
       "Outputs": [
         "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values-v28/styles.xml"
       ],
-      "DebugActionIndex": 1020
+      "DebugActionIndex": 1021
     },
     {
       "Annotation": "CopyFiles /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values-v31/styles.xml",
@@ -24089,7 +24105,7 @@
       "Outputs": [
         "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values-v31/styles.xml"
       ],
-      "DebugActionIndex": 1021
+      "DebugActionIndex": 1022
     },
     {
       "Annotation": "CopyFiles /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values/styles.xml",
@@ -24101,7 +24117,7 @@
       "Outputs": [
         "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values/styles.xml"
       ],
-      "DebugActionIndex": 1022
+      "DebugActionIndex": 1023
     },
     {
       "Annotation": "WriteText /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values/colors.xml",
@@ -24114,7 +24130,7 @@
       "Outputs": [
         "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values/colors.xml"
       ],
-      "DebugActionIndex": 1023
+      "DebugActionIndex": 1024
     },
     {
       "Annotation": "WriteText /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/values/strings.xml",
@@ -24127,7 +24143,7 @@
       "Outputs": [
         "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/values/strings.xml"
       ],
-      "DebugActionIndex": 1024
+      "DebugActionIndex": 1025
     },
     {
       "Annotation": "CopyFiles /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values-v30/freeformwindow.xml",
@@ -24139,7 +24155,7 @@
       "Outputs": [
         "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values-v30/freeformwindow.xml"
       ],
-      "DebugActionIndex": 1025
+      "DebugActionIndex": 1026
     },
     {
       "Annotation": "CopyFiles /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values/freeformwindow.xml",
@@ -24151,7 +24167,7 @@
       "Outputs": [
         "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/res/values/freeformwindow.xml"
       ],
-      "DebugActionIndex": 1026
+      "DebugActionIndex": 1027
     },
     {
       "Annotation": "CopyFiles /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-anydpi-v26/app_icon.xml",
@@ -24163,7 +24179,7 @@
       "Outputs": [
         "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-anydpi-v26/app_icon.xml"
       ],
-      "DebugActionIndex": 1027
+      "DebugActionIndex": 1028
     },
     {
       "Annotation": "CopyFiles /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-anydpi-v26/app_icon_round.xml",
@@ -24175,7 +24191,7 @@
       "Outputs": [
         "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-anydpi-v26/app_icon_round.xml"
       ],
-      "DebugActionIndex": 1028
+      "DebugActionIndex": 1029
     },
     {
       "Annotation": "CopyFiles /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-mdpi/app_icon.png",
@@ -24187,7 +24203,7 @@
       "Outputs": [
         "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-mdpi/app_icon.png"
       ],
-      "DebugActionIndex": 1029
+      "DebugActionIndex": 1030
     },
     {
       "Annotation": "CopyFiles /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-mdpi/ic_launcher_background.png",
@@ -24199,7 +24215,7 @@
       "Outputs": [
         "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-mdpi/ic_launcher_background.png"
       ],
-      "DebugActionIndex": 1030
+      "DebugActionIndex": 1031
     },
     {
       "Annotation": "CopyFiles /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-mdpi/ic_launcher_foreground.png",
@@ -24211,7 +24227,7 @@
       "Outputs": [
         "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/launcher/src/main/res/mipmap-mdpi/ic_launcher_foreground.png"
       ],
-      "DebugActionIndex": 1031
+      "DebugActionIndex": 1032
     },
     {
       "Annotation": "CopyFiles /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/arm64-v8a/libmain.so",
@@ -24223,7 +24239,7 @@
       "Outputs": [
         "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/arm64-v8a/libmain.so"
       ],
-      "DebugActionIndex": 1032
+      "DebugActionIndex": 1033
     },
     {
       "Annotation": "SourceBuildPlayerFiles",
@@ -24231,11 +24247,11 @@
       "Inputs": [],
       "Outputs": [],
       "ToBuildDependencies": [
-        1032,
-        1045
+        1033,
+        1046
       ],
       "OverwriteOutputs": false,
-      "DebugActionIndex": 1033
+      "DebugActionIndex": 1034
     },
     {
       "Annotation": "WriteText Library/Bee/artifacts/csharpactions/LauncherManifestDiag.txt_zvqu.info",
@@ -24248,7 +24264,7 @@
       "Outputs": [
         "Library/Bee/artifacts/csharpactions/LauncherManifestDiag.txt_zvqu.info"
       ],
-      "DebugActionIndex": 1034
+      "DebugActionIndex": 1035
     },
     {
       "Annotation": "Generate Manifests Library/Bee/artifacts/Android/Manifest/LauncherManifestDiag.txt (+3 others)",
@@ -24378,12 +24394,12 @@
         107,
         109,
         111,
-        1034
+        1035
       ],
       "OverwriteOutputs": false,
       "AllowUnexpectedOutput": true,
       "Env": [],
-      "DebugActionIndex": 1035
+      "DebugActionIndex": 1036
     },
     {
       "Annotation": "WriteText Library/Bee/artifacts/csharpactions/UnityClassRegistration.cpp_bnc3.info",
@@ -24396,7 +24412,7 @@
       "Outputs": [
         "Library/Bee/artifacts/csharpactions/UnityClassRegistration.cpp_bnc3.info"
       ],
-      "DebugActionIndex": 1036
+      "DebugActionIndex": 1037
     },
     {
       "Annotation": "ClassRegistrationGenerator /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/artifacts/Android/il2cppOutput/UnityClassRegistration.cpp",
@@ -24454,12 +24470,12 @@
       ],
       "ToBuildDependencies": [
         13,
-        1036
+        1037
       ],
       "OverwriteOutputs": false,
       "AllowUnexpectedOutput": true,
       "Env": [],
-      "DebugActionIndex": 1037
+      "DebugActionIndex": 1038
     },
     {
       "Annotation": "Compile UnityClassRegistration Library/Bee/artifacts/Android/libunity/arm64-v8a/UnityClassRegistration.o",
@@ -24474,11 +24490,11 @@
         "Library/Bee/artifacts/Android/libunity/arm64-v8a/UnityClassRegistration.o"
       ],
       "ToBuildDependencies": [
-        1037
+        1038
       ],
       "AllowUnexpectedOutput": true,
       "Env": [],
-      "DebugActionIndex": 1038
+      "DebugActionIndex": 1039
     },
     {
       "Annotation": "ICallRegistrationGenerator /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/artifacts/Android/il2cppOutput/UnityICallRegistration.cpp",
@@ -24521,7 +24537,7 @@
       ],
       "AllowUnexpectedOutput": true,
       "Env": [],
-      "DebugActionIndex": 1039
+      "DebugActionIndex": 1040
     },
     {
       "Annotation": "Compile UnityICallRegistration Library/Bee/artifacts/Android/libunity/arm64-v8a/UnityICallRegistration.o",
@@ -24536,11 +24552,11 @@
         "Library/Bee/artifacts/Android/libunity/arm64-v8a/UnityICallRegistration.o"
       ],
       "ToBuildDependencies": [
-        1039
+        1040
       ],
       "AllowUnexpectedOutput": true,
       "Env": [],
-      "DebugActionIndex": 1040
+      "DebugActionIndex": 1041
     },
     {
       "Annotation": "Link libunity Library/Bee/artifacts/Android/libunity/arm64-v8a/unstripped/libunity.so",
@@ -24558,12 +24574,12 @@
         "Library/Bee/artifacts/Android/libunity/arm64-v8a/unstripped/libunity.so"
       ],
       "ToBuildDependencies": [
-        1038,
-        1040
+        1039,
+        1041
       ],
       "AllowUnexpectedOutput": true,
       "Env": [],
-      "DebugActionIndex": 1041
+      "DebugActionIndex": 1042
     },
     {
       "Annotation": "Generate Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.dbg.so from Library/Bee/artifacts/Android/libunity/arm64-v8a/unstripped/libunity.so Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.dbg.so",
@@ -24577,11 +24593,11 @@
         "Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.dbg.so"
       ],
       "ToBuildDependencies": [
-        1041
+        1042
       ],
       "AllowUnexpectedOutput": true,
       "Env": [],
-      "DebugActionIndex": 1042
+      "DebugActionIndex": 1043
     },
     {
       "Annotation": "Generate Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.sym.so from Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.dbg.so Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.sym.so",
@@ -24595,11 +24611,11 @@
         "Library/Bee/artifacts/Android/libunity/arm64-v8a/libunity.sym.so"
       ],
       "ToBuildDependencies": [
-        1042
+        1043
       ],
       "AllowUnexpectedOutput": true,
       "Env": [],
-      "DebugActionIndex": 1043
+      "DebugActionIndex": 1044
     },
     {
       "Annotation": "Stripping Library/Bee/artifacts/Android/libunity/arm64-v8a/unstripped/libunity.so -> Library/Bee/artifacts/Android/libunity/arm64-v8a/stripped/libunity.so Library/Bee/artifacts/Android/libunity/arm64-v8a/stripped/libunity.so",
@@ -24613,11 +24629,11 @@
         "Library/Bee/artifacts/Android/libunity/arm64-v8a/stripped/libunity.so"
       ],
       "ToBuildDependencies": [
-        1041
+        1042
       ],
       "AllowUnexpectedOutput": true,
       "Env": [],
-      "DebugActionIndex": 1044
+      "DebugActionIndex": 1045
     },
     {
       "Annotation": "Adding note Library/Bee/artifacts/Android/libunity/arm64-v8a/stripped/libunity.so -> /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/arm64-v8a/libunity.so /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/arm64-v8a/libunity.so",
@@ -24633,12 +24649,12 @@
         "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/jniLibs/arm64-v8a/libunity.so"
       ],
       "ToBuildDependencies": [
-        1043,
-        1044
+        1044,
+        1045
       ],
       "AllowUnexpectedOutput": true,
       "Env": [],
-      "DebugActionIndex": 1045
+      "DebugActionIndex": 1046
     },
     {
       "Annotation": "CopyFiles /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/arm64-v8a/libmain.so",
@@ -24650,7 +24666,7 @@
       "Outputs": [
         "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/arm64-v8a/libmain.so"
       ],
-      "DebugActionIndex": 1046
+      "DebugActionIndex": 1047
     },
     {
       "Annotation": "CopyFiles /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/arm64-v8a/libil2cpp.so",
@@ -24665,7 +24681,7 @@
       "ToBuildDependencies": [
         610
       ],
-      "DebugActionIndex": 1047
+      "DebugActionIndex": 1048
     },
     {
       "Annotation": "CopyFiles /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/arm64-v8a/libunity.so",
@@ -24678,9 +24694,9 @@
         "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/symbols/arm64-v8a/libunity.so"
       ],
       "ToBuildDependencies": [
-        1043
+        1044
       ],
-      "DebugActionIndex": 1048
+      "DebugActionIndex": 1049
     },
     {
       "Annotation": "WriteText Library/Bee/artifacts/csharpactions/unity_app_guid_mfpg.info",
@@ -24693,7 +24709,7 @@
       "Outputs": [
         "Library/Bee/artifacts/csharpactions/unity_app_guid_mfpg.info"
       ],
-      "DebugActionIndex": 1049
+      "DebugActionIndex": 1050
     },
     {
       "Annotation": "GuidGenerator /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/assets/bin/Data/unity_app_guid",
@@ -24730,12 +24746,12 @@
       "ToBuildDependencies": [
         5,
         114,
-        1049
+        1050
       ],
       "OverwriteOutputs": false,
       "AllowUnexpectedOutput": true,
       "Env": [],
-      "DebugActionIndex": 1050
+      "DebugActionIndex": 1051
     },
     {
       "Annotation": "WriteText /home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/resources/META-INF/com.android.games.engine.build_fingerprint",
@@ -24748,7 +24764,7 @@
       "Outputs": [
         "/home/ahmad/Desktop/UnityProjects/WearOn/Library/Bee/Android/Prj/IL2CPP/Gradle/unityLibrary/src/main/resources/META-INF/com.android.games.engine.build_fingerprint"
       ],
-      "DebugActionIndex": 1051
+      "DebugActionIndex": 1052
     },
     {
       "Annotation": "Player",
@@ -25215,7 +25231,7 @@
         1011,
         1012,
         1013,
-        1015,
+        1014,
         1016,
         1017,
         1018,
@@ -25233,13 +25249,14 @@
         1030,
         1031,
         1032,
-        1035,
-        1045,
-        1050,
-        1051
+        1033,
+        1036,
+        1046,
+        1051,
+        1052
       ],
       "OverwriteOutputs": false,
-      "DebugActionIndex": 1052
+      "DebugActionIndex": 1053
     }
   ],
   "FileSignatures": [
@@ -25789,8 +25806,8 @@
   ],
         "NamedNodes": {
           "all_tundra_nodes": 0,
-          "SourceBuildPlayerFiles": 1033,
-          "Player": 1052
+          "SourceBuildPlayerFiles": 1034,
+          "Player": 1053
         }
 ,  "DefaultNodes": [
     0

@@ -1883,7 +1883,7 @@ ScriptsOnlyBuild:
     className: TMP_ScrollbarEventHandler
   - hash:
       serializedVersion: 2
-      Hash: 2bee1da207c4c73384eb0742363063a3
+      Hash: dde3db0c3435e7d4f15c519ea4fd6a09
     assemblyName: Assembly-CSharp
     namespaceName: 
     className: ARItems
